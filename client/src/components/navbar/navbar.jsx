@@ -13,7 +13,7 @@ function Navbar(){
                 <img className="logo" src={logo} ></img>
                 <p className='logoname'>Donezo</p>
             </div>
-              <div className='li'>
+              <div className='liee'>
                 <ul className='list'>
                     <li><a href="#home"/>Home</li>
                     <li><a href="#features"/>Features</li>
