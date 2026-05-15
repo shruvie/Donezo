@@ -1,0 +1,77 @@
+.popup{
+    display: flex;
+    flex-direction: row;
+
+    position: fixed;
+
+    bottom: 20px;
+    left: 20px;
+
+    min-width: 250px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    
+    color:white;
+
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 12px;
+    background-color: rgba(71, 71, 71, 0.301);
+    backdrop-filter: blur(30px);
+    gap: 6px;
+    overflow: hidden;
+    animation: slideIn 0.3s ease;
+    z-index:999;
+}
+
+.popup p{
+    background:none;
+}
+.success{
+    border: 1px solid greenyellow;
+    
+}
+.success1{background-color: greenyellow;}
+.error{
+    border: 1px solid rgb(255, 131, 131);
+    
+}
+.error1{background-color: rgb(255, 131, 131);}
+.warning{
+    border: 1px solid rgb(255, 191, 1);
+    
+}
+.warning1{background-color: rgb(255,191,1);}
+.info{
+    border: 1px solid salmon;
+    
+}
+.info1{background-color: salmon;}
+.ico{
+    font-size: 18px;
+    color: white;
+    background-color: none;
+    background: none;
+    border:none;
+}
+
+
+.line{
+    width: 100%;
+    animation: Fillin linear forwards;
+    transform-origin: left;
+    height: 4px;
+    opacity: 70%;
+
+}
+
+@keyframes Fillin{
+    from{transform: scaleX(0);}
+    to{transform: scaleX(1);}
+}
+
+@keyframes slideIn{
+    from { transform: translateX(0);}
+    tp{ transform: translateX(100%);}
+}

@@ -1,11 +1,15 @@
 import './navbar.css';
 import logo from '../../assets/my-logo.png';
 import button from '../../assets/button.png';
+import { useNavigate } from 'react-router-dom';
 
 function Navbar(){
+
+    const navigate = useNavigate();
+
     return(
         <div className='navbar'>
-            <div className='login'>
+            <div className='logoin'>
                 <img className="logo" src={logo} ></img>
                 <p className='logoname'>Donezo</p>
             </div>
@@ -19,8 +23,8 @@ function Navbar(){
                 </ul>
             </div>
             <div className='buttons'>
-                <button className="sign" type='button'>Sign in</button>
-                <button className="get" type='button'>Get Started</button>
+                <button className="sign" onClick={()=>navigate('/login')}    type='button'>Sign in</button>
+                <button className="get" onClick={()=>navigate('/signup')} type='button'>Get Started</button>
             </div>
         </div>
     )

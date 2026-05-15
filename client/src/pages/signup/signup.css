@@ -1,0 +1,165 @@
+.signup-page{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 900px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 24px;
+    background-color: #55555533;
+    backdrop-filter: blur(20%);
+}
+
+
+
+.im1{
+    height: 24px;
+    width: 24px;
+}
+.bg-vid1{
+    position: absolute;
+    top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index:0;
+}
+
+.leftin{
+    position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 350px 40px 20px 30px;
+  justify-content: left;
+  border-radius: 24px;
+}
+
+.brandin{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    gap: 0px;
+    margin:0px;
+    background: none;
+    z-index:1;
+}
+
+.brandin h5{
+    background: none;
+    font-size: 20px;
+    font-weight: 400;
+    margin:11px 0px 0px 0px;
+}
+
+.brandin p{
+    background: none;
+    margin-top: 0px;
+    font-size: 10px;
+}
+
+.signtxtt{
+    background: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+
+.signtxtt p{
+    font-size: 14px;
+}
+
+.im1{
+    height: 20px;
+    width: 20px;
+    background: none;
+}
+
+.rightin{
+    padding: 0px 60px;
+    background: none;
+}
+.signupform{
+    padding: 40px 0px;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: none;
+}
+.signtext{
+    background: none;
+}
+.man{
+    background: none;
+}
+.myform{
+    background: none;
+}
+.signupform button{
+    outline: none;
+    background-color: #DC5F00;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    margin-top: 0px;
+}
+
+.first-row{
+    display: grid;
+    background: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin:0px;
+}
+#formb1{
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    background-color: none;
+}
+
+#formb1 label{
+    font-size: 12px;
+    background: none;
+}
+#formb1 input{
+    background-color:#38393b;
+    border: none;
+    border-radius: 4px;
+    margin-top: 4px;
+    padding: 8px 8px;
+    font-size: 10px;
+}
+
+#formb input:focus{
+    border: 1px solid #ffffff;
+    outline:none;
+}
+.forgot-password{
+    text-align: right;
+    color: #DC5F00;
+    background: none;
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+.iflogin{
+    display: flex;
+    flex-direction: row;
+    font-size: 11px;
+    background: none;
+    text-align: center;
+    justify-content: center;
+    gap: 5px;
+}
+.but{
+    font-weight: 600;
+}
+

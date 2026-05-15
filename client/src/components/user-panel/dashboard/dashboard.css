@@ -1,0 +1,225 @@
+.task{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background: none;
+    gap: 10px;
+    padding: 0px;
+}
+*::-webkit-scrollbar {
+    display: none;                /* Chrome, Safari */
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    background: none;
+    gap: 24px;
+    width: 100%; 
+    padding: 20px 0px;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    background: none;
+    gap: 24px;
+    width: 100%;
+    padding: 20px 20px;
+}
+.titlebar{
+    display: flex;
+    background: none;
+    flex-direction: column;
+
+}
+.titlebar h3{
+    background: none;
+    font-size: 16px;
+}
+
+.titlebar p{
+    font-size: 11px;;
+    background: none;
+}
+
+.tasks-section{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: none;
+    width: 100%;
+}
+
+.filters{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 12px;
+    background: none;
+}
+
+.or-filters{
+    display: flex;
+    flex-direction: row;
+    gap:8px;
+    background: none;
+}
+.type{
+    background-color: black;
+    padding: 8px 12px;
+    color: white;
+    font-size: 11px;
+    border: 1px solid white;
+    border-radius: 16px;;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.priority{
+    background-color: black;
+    padding: 8px 12px;
+    color: white;
+    font-size: 11px;
+    border: 1px solid white;
+    border-radius: 16px;;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+.add-task{
+    background-color: black;
+    padding: 8px 12px;
+    color: white;
+    font-size: 11px;
+    border: 1px solid white;
+    border-radius: 16px;
+}
+
+.task-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.194);
+    padding: 18px;
+    border-radius: 20px;
+}
+
+.task-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: none;
+}
+
+.task-title{
+    background: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-title h6{
+    font-size: 10px;
+    font-weight:500;
+    background: none;
+}
+
+.task-title h3{
+    font-size: 16px;
+    font-weight: 500;
+    background: none;
+}
+
+.task-title p{
+    background: none;
+    font-size: 12px;
+}
+.task-bottom{
+    display: flex;
+    flex-direction: row;
+    background: none;
+    gap: 9px;
+}
+.attach-files{
+    background: none;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.194);
+    height: 34px;
+    width: 34px;
+    border-radius: 44px;
+}
+.clip{
+    scale: 90%;
+    background: none;
+}
+
+.more{
+    background: none;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.194);
+    height: 34px;
+    width: 34px;
+    border-radius: 44px;
+}
+.dots{
+    scale: 90%;
+    background: none;
+}
+.task-cards p{
+    font-size: 11px;
+    background: none;
+}
+
+.note{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    border-radius: 24px;
+    background-size: cover;
+    padding: 20px;
+}
+
+.note-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: none;
+}
+
+.note-top h6{
+    background: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.edit{
+    background: none;
+    height: 28px;
+    width: 28px;
+    border-radius: 64px;
+}
+
+.note-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    background: none;
+    gap: 14px;
+}
+
+.note-content p{
+    background: none;
+    font-size: 14px;
+}
+
+.li{
+    height: 100%;
+    width: 2px;
+    border-radius: 10px;
+    background-color: coral;
+}
+.cal{
+    background: none;
+}
