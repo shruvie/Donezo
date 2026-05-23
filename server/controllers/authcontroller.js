@@ -19,6 +19,22 @@ export const registerUser = async(req,res) =>{
             email,
             password: hashedPassword
         })
+        const token = jwt.sign(
+            {id: user._id},
+            process.env.JWT_SECRET,
+            {expiresIn: '7d'}
+        );
+
+        // ← return token + user same as login
+        res.status(201).json({
+            token,
+            user: {
+                _id: user._id,   // ← use _id not id so frontend works
+                name: user.name,
+                email: user.email,
+                avatar: user.avatar || ''
+            }
+        });
         res.status(201).json({message:"user registered bitch!"});
     }catch(err){
         res.status(500).json({message: err.message});

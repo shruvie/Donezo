@@ -1,0 +1,24 @@
+.task-tab{
+    padding: 33px;
+    background: none;
+    width: 100%;
+}
+.titlebar-task{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: none;
+}
+.tasks-section-task{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: none;
+    width: 100%;
+}
+.task-cards-left{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: none;
+}

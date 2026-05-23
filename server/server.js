@@ -5,6 +5,7 @@ import connectDB from './config/db.js';
 import taskschema from './models/tasks.js';
 import User from './models/users.js';
 import taskRoutes from './routes/taskRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import cors from 'cors';
 
@@ -15,8 +16,9 @@ connectDB();      // ← then connect DB
 const app = express();
 app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
-
-app.use('/api/auth',userRoutes);
+app.use(express.urlencoded({ extended: true }));
+app.use('/api/auth',authRoutes);
+app.use('/api/users',userRoutes);
 app.use('/api/tasks', taskRoutes);
 app.get('/', (req, res) => {
   res.send('API is running!');

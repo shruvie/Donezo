@@ -27,12 +27,14 @@ function Signup(){
                 name,
                 password
             })
+            console.log('response',res.data);
             localStorage.setItem('token', res.data.token);
+localStorage.setItem('user', JSON.stringify(res.data.user));
             setNotification({
                 message: 'Account created successfully',
                 type: 'success'
             })
-            navigate('/userpanel');
+            navigate('/onboarding');
 
         }catch(err){
             console.log(err.message);
@@ -96,7 +98,7 @@ function Signup(){
                         </div>
                         
                         {error && <p style={{color:'red',fontSize:"9px"}}>{error}</p>}
-                        <button type="submit">Sign Up</button>
+                        <button type="submit" >Sign Up</button>
                         
                     </form>
                 </div>

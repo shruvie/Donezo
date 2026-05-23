@@ -6,6 +6,7 @@ import { IoSearch, IoNotificationsOutline } from 'react-icons/io5'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import Dashboard from './dashboard/dashboard';
+import Tasks from './tasks/tasks.jsx';
 
 function Userpanel(){
 
@@ -15,11 +16,12 @@ function Userpanel(){
     const renderPage=()=>{
         switch(activepage){
             case 'dashboard': return <Dashboard/>;
-            case 'tasks': return <Dashboard />;
+            case 'tasks': return <Tasks />;
             default: <Dashboard />
         }
     };
 
+    const user = JSON.parse(localStorage.getItem('user'));
 
 
     return(
@@ -53,7 +55,7 @@ function Userpanel(){
                     <div className='profile'>
                         <div className='Add members'></div>
                         <div className='notifications'><IoNotificationsOutline /></div>
-                        <img src='' className='top-bar-profile-img'></img>
+                        <img src={user?.avatar} className='top-bar-profile-img'></img>
                     </div>
                 </div>
                 <div className='main-content'>{renderPage() }</div>

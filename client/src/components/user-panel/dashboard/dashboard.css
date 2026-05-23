@@ -4,7 +4,10 @@
     background: none;
     gap: 10px;
     padding: 0px;
+    position: relative;
+    z-index:0;
 }
+
 *::-webkit-scrollbar {
     display: none;                /* Chrome, Safari */
 }
@@ -19,9 +22,12 @@
 .right{
     display: flex;
     flex-direction: column;
+    margin:0px;
     background: none;
     gap: 24px;
     width: 100%;
+    height: 100%;
+    justify-content: flex-start;
     padding: 20px 20px;
 }
 .titlebar{
@@ -119,7 +125,6 @@
     display: flex;
     flex-direction: column;
 }
-
 .task-title h6{
     font-size: 10px;
     font-weight:500;
@@ -200,7 +205,9 @@
     width: 28px;
     border-radius: 64px;
 }
-
+.icoi{
+    background: none;
+}
 .note-content{
     display: flex;
     flex-direction: row;
@@ -222,4 +229,99 @@
 }
 .cal{
     background: none;
+}
+
+.overlay{
+    height:450px;
+    padding: 24px;
+    width:700px;
+    background-color: black;
+    justify-content: center;
+    justify-self: center;
+    border-radius: 24px;
+    z-index: 1;
+    position: fixed;
+    margin-top: 22px;
+}
+.title{
+    font-size: 23px;
+    outline:none;
+    border: none;
+    padding: 10px 0px;
+    background-color: black;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.413);
+}
+.prior{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    width:fit-content;
+    padding: 4px 20px;
+    border-radius: 16px;
+    font-size: 12px;
+    
+}
+
+.prior-row{
+    display: flex;
+    flex-direction: row;
+    gap:12px;
+    margin: 15px 0px;
+}
+
+.pri{
+    display: flex;
+    flex-direction: column;
+    margin-top: 23px;
+}
+.nd-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:24px;
+}
+.duedate{
+    display: flex;
+    flex-direction: column;
+    gap:3px;
+    width:100%;
+    margin: 25px 26px;
+}
+.duedate input{
+    width:100%;
+    border: none;
+    border-bottom: 1px solid white;
+    padding-left: 10px;
+    padding: 10px 0px;
+    color:white;
+}
+.duedate input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.status-btn{
+    border: 1px solid white;
+    outline: none;
+    background: none;
+    padding: 8px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+}
+.status-dropdown{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color:rgba(0, 0, 0, 0.9);
+    -webkit-backdrop-filter: blur(77px);
+    z-index: 1;
+}
+.status-option{
+    font-size: 11px;
+    padding: 8px 12px;
+    background:none;
+    align-self: center;
+    justify-content:space-evenly;
+    width:100%;
 }
