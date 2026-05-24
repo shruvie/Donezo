@@ -14,7 +14,10 @@ dotenv.config();  // ← must be first
 connectDB();      // ← then connect DB
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: ['http://localhost:5173','https://donezo-sepia.vercel.app'],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'] }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api/auth',authRoutes);
