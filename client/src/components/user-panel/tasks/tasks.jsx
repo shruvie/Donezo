@@ -12,7 +12,7 @@ function Tasks() {
         const user = JSON.parse(localStorage.getItem('user'));
         const token = localStorage.getItem('token');
 
-        fetch(`http://localhost:3000/api/tasks/`, {
+        fetch(`https://donezo-production-d645.up.railway.app/api/tasks/`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

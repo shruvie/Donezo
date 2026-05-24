@@ -47,7 +47,7 @@ function Onb(){
 );
             const imgUrl = cloudinaryRes.data.secure_url;
             setSelectedAvatar(imgUrl);    
-            await axios.put(`http://localhost:3000/api/users/${userId}/avatar`,{avatar:imgUrl},
+            await axios.put(`https://donezo-production-d645.up.railway.app/api/users/${userId}/avatar`,{avatar:imgUrl},
             {
                 headers: {
                     'Content-Type': 'application/json'

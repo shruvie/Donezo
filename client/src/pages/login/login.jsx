@@ -21,7 +21,7 @@ function Login(){
         
     e.preventDefault();
         try{
-            const res = await axios.post("http://localhost:3000/api/auth/login",{
+            const res = await axios.post("https://donezo-production-d645.up.railway.app/api/auth/login",{
                 email,
                 password
             })
