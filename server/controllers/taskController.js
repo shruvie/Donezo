@@ -8,8 +8,9 @@ export const createTask = async (req, res) => {
     const task = await Task.create({
       title,
       description,
-      dueDate,
+      duedate,
       status,
+      priority,
       createdBy: req.user.id
     });
 

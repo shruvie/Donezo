@@ -1,7 +1,7 @@
 import React from "react";
 import './hero.css';
 import { BsLightningChargeFill } from "react-icons/bs";
-import dash from '../../assets/dashboard.jpg';
+import dash from '../../assets/image.png';
 
 
 function Hero(){

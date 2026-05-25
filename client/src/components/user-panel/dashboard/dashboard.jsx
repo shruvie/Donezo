@@ -15,8 +15,15 @@ function Dashboard() {
     
     const [open, setopen] = useState(null);
 
-    const statuses = [{label:'to-do',value:'to-do',color:'#ff8787',bgcolor:'#ffbebe'}, {label:'progress',value:'progress',color:'#fcdab3',bgcolor:'#fff8b4'}, {label:'done',value:'done',color:'#ceffd5',bgcolor:'#bbffbf'}];
-    const [currentstatus, setcurrentstatus] = useState(statuses[0]);
+   const statuses = [
+    { label: 'to-do', value: 'to-do', color: '#ff8787', bgcolor: '#ffbebe' },
+    { label: 'in-progress', value: 'in-progress', color: '#fcdab3', bgcolor: '#fff8b4' },
+    { label: 'done', value: 'done', color: '#ceffd5', bgcolor: '#bbffbf' }
+];
+
+const [currentstatus, setcurrentstatus] = useState(
+    { label: 'to-do', value: 'to-do', color: '#ff8787', bgcolor: '#ffbebe' }
+);
     const priorities = [{
         label: 'High',
         value: 'high',
@@ -134,7 +141,7 @@ function Dashboard() {
 
                         <div className='nd-row'>
                             <div className='pri'>
-                                <p style={{ fontSize: "12px", marginTop: '12px;' }}>priority</p>
+                                <p style={{ fontSize: "12px", marginTop: '12px' }}>priority</p>
                                 <div className='prior-row'>
                                     {priorities.map((items) => {
                                         const isSelected = selectedpriority === items.value;
@@ -148,7 +155,7 @@ function Dashboard() {
                                 </div>
                             </div>
                             <div className='duedate'>
-                                <label style={{ fontSize: "12px", marginTop: '12px;' }}>Date</label>
+                                <label style={{ fontSize: "12px", marginTop: '12px' }}>Date</label>
                                 <input type='date'></input>
                             </div>
                         </div>
