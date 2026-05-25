@@ -1,0 +1,85 @@
+.task-calendar {
+  width: 100%;
+  background: #111;
+  color: white;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cal-weekdays,
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+.weekday {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.cal-cell {
+  min-height: 70px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 8px;
+  position: relative;
+}
+
+.cal-cell.has-task {
+  border: 1px solid #ff8787;
+}
+
+.task-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff8787;
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+}
+
+.cal-cell.prev,
+.cal-cell.next {
+  opacity: 0.35;
+}
+
+.task-list {
+  margin-top: 18px;
+}
+
+.task-day-group {
+  margin-bottom: 14px;
+}
+
+.task-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.task-tag {
+  background: #7c3aed;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.task-tag:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

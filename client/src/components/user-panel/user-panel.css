@@ -170,10 +170,10 @@ body,html{
     height:36px;
     width: 36px;
     border-radius: 64px;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.349);
 }
 .notifications{
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.283);
     padding: 8px 8px 8px 9px;
     height: 36px;
     width: 36px;
@@ -188,4 +188,79 @@ body,html{
     justify-content: flex-start;
     align-items: flex-start;
     
+}
+.profile-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.top-bar-profile-img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.3);
+    cursor: pointer;
+}
+
+.profile-dropdown {
+    position: absolute;
+
+    top: 48px;
+    right: 0;
+
+    width: 240px;
+
+    background: #111;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    z-index: 1000;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.profile-dropdown h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.profile-dropdown p {
+    font-size: 13px;
+    color: #aaa;
+}
+
+.profile-dropdown span {
+    display: inline-block;
+
+    margin-top: 10px;
+
+    background: coral;
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    font-size: 12px;
+}
+
+.logout-btn {
+    width: 100%;
+
+    margin-top: 16px;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: coral;
+
+    color: white;
+
+    cursor: pointer;
 }
