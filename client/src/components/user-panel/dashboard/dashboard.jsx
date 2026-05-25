@@ -5,13 +5,17 @@ import { BsCircle, BsPaperclip, BsThreeDots } from 'react-icons/bs';
 import bg from '../../../assets/grad-red.png';
 import MiniCalendar from '../../Extras/calender/minicalender.jsx';
 import { useEffect, useState } from 'react';
+import Popup from '../../Extras/popup-notif/popup-notif.jsx';
 
 
 function Dashboard() {
 
     const [overlay, setOverlay] = useState(false);
     const [tasks, setTasks] = useState([]);
-    const [selectedpriority, setselectedpriority] = useState("");
+    const [selectedpriority, setselectedpriority] = useState("");const [title, setTitle] = useState('');
+const [description, setDescription] = useState('');
+const [duedate, setDuedate] = useState('');
+const [popup, setpopup] = useState(null);
     
     const [open, setopen] = useState(null);
 
@@ -53,6 +57,47 @@ const [currentstatus, setcurrentstatus] = useState(
             .then(data => { console.log(data); setTasks(Array.isArray(data) ? data : []) })
             .catch(err => console.log(err));
     }, []);
+    const handleSubmit = async () => {
+    const token = localStorage.getItem('token');
+
+    try {
+        const res = await fetch('https://donezo-production-d645.up.railway.app/api/tasks/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                title,
+                description,
+                duedate,
+                status: currentstatus.value,
+                priority: selectedpriority
+            })
+        });
+
+        const data = await res.json();
+        console.log('response:', data); // check what comes back
+
+        if (!res.ok) {
+            setpopup({ message: data.message || 'Failed to add task', type: 'error' });
+            return;
+        }
+
+        setTasks([...tasks, data]);
+        setOverlay(false);
+        setTitle('');
+        setDescription('');
+        setDuedate('');
+        setselectedpriority(null);
+        setcurrentstatus(statuses[0]);
+        setpopup({ message: 'Task added successfully!', type: 'success' });
+
+    } catch (err) {
+        console.log(err);
+        setpopup({ message: 'Server error occurred', type: 'error' });
+    }
+};
 
     return (
         <div className='task'>
@@ -116,7 +161,7 @@ const [currentstatus, setcurrentstatus] = useState(
                     <div className='overlay-form' style={{display:'flex',flexDirection:'column',gap:'12px'}} >
 
                         <div style={{ display: 'flex', flexDirection:'row',justifyContent: 'space-between', alignItems: 'center' }}>
-                            <input name='title' className='title' type='text' placeholder='Title'></input>
+                            <input name='title' className='title' type='text' placeholder='Title' onChange={(e) => setTitle(e.target.value)}></input>
                         <div className='statuses'>
                             <button className='status-btn' style={{ color: currentstatus.color, borderColor:currentstatus.color, display:'flex',flexDirection:'row',gap:'8px',alignItems:'center'}} onClick={() => setopen(open === 'form' ? null : 'form')}>
                                 <div style={{backgroundColor: currentstatus.color,height:'14px',width:'14px', borderRadius:"7px", borderColor: currentstatus.color}}/>{currentstatus.value} ▾
@@ -156,20 +201,21 @@ const [currentstatus, setcurrentstatus] = useState(
                             </div>
                             <div className='duedate'>
                                 <label style={{ fontSize: "12px", marginTop: '12px' }}>Date</label>
-                                <input type='date'></input>
+                                <input type='date' value={duedate} onChange={(e) => setDuedate(e.target.value)}></input>
                             </div>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                             <label htmlFor='description' style={{ fontSize: '12px' }}>Description</label>
-                            <input name='description' style={{ border: '1px solid #ffffff69', textAlign: 'top', borderRadius: '10px', height: '60px', width: '100%' }}></input>
+                            <input name='description' style={{ border: '1px solid #ffffff69', textAlign: 'top', borderRadius: '10px', height: '60px', width: '100%' }} onChange={(e) => setDescription(e.target.value)}></input>
                         </div>
                     </div>
                     <div className='buttons1' style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', gap: '12px' }}>
                         <button className='cancel-btn' style={{border: '1px solid #ffffff4a', color: 'white',padding:'8px 12px', borderRadius:'22px'}} onClick={() => setOverlay(false)}>Cancel</button>
-                        <button className='add-btn' style={{backgroundColor:'white', color: 'black',padding:'8px 12px', borderRadius:'22px'}} >Save</button>
+                        <button className='add-btn' style={{backgroundColor:'white', color: 'black',padding:'8px 12px', borderRadius:'22px'}} onClick={handleSubmit} >Save</button>
                     </div>
                 </div>
             )}
+            {popup && <Popup type={popup.type} message={popup.message} onClose={() => setpopup(null)} />}
         </div>
     )
 }
