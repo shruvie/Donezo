@@ -141,7 +141,7 @@ body {
     flex-direction: column;
     gap:12px;
     justify-content: center;
-    padding: 60px;
+    padding: 80px;
     background: transparent !important;
 }
 .bg-vid{
