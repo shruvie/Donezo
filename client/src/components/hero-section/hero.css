@@ -1,88 +1,160 @@
-.services,
-.why,
-.stats,
-.cta,
-.footer {
-  background: #05010f;
-  color: white;
-  padding: 100px 10%;
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(
+        ellipse 80% 40% at 50% 60%,
+        rgba(220, 95, 0, 0.4) 0%,
+        transparent 70%
+    ),
+    radial-gradient(
+        ellipse 60% 30% at 50% 55%,
+        rgba(255, 120, 0, 0.2) 0%,
+        transparent 60%
+    ),
+    #05010f;
+    padding-top: 600px;
+    gap: 20px;
+    background: none;
 }
 
-.services h2,
-.why h2,
-.cta h2 {
-  text-align: center;
-  margin-bottom: 50px;
-  font-size: 42px;
+.herbut{
+    margin: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
 }
 
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
+.geti{
+    background-color: #DC5F00;
+    padding: 8px 16px;
+    color:white;
+    border-radius: 64px;
+    border: none;
 }
 
-.card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(220,95,0,0.2);
-  padding: 30px;
-  border-radius: 20px;
-  transition: 0.3s;
+.try{
+    padding: 8px 16px;
+    border-radius: 64px;
+    background: none;
+    color: #ffffff;
+    border-color: white;
 }
 
-.card svg {
-  font-size: 30px;
-  color: #DC5F00;
-  margin-bottom: 15px;
+.herbut{
+    background: none;
+    margin-top: 10px;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  border-color: #DC5F00;
+.her-cute{
+    display: flex;
+    justify-content: center;
 }
 
-.why-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 30px;
+.tag{
+    padding: 12px 18px;
+    justify-content: center;
+    text-align: center;
+    background-color: none;
+    border: 1px solid #ff9d52cc;
+    box-shadow:
+    0 0 10px #DC5F00,
+    0 0 20px #DC5F00;
+    animation: tagGlow 3s ease-in-out infinite;
+    color: white;
+    font-size: 12px;
+    background-color: #9ca3af23;
+    border-radius: 34px;
 }
 
-.why-content div {
-  padding: 25px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.03);
+@keyframes tagGlow {
+    from{
+        box-shadow:
+        0 0 10px #DC5F00,
+        0 0 20px #DC5F00;
+    }
+    to{
+        box-shadow:
+        0 0 20px #DC5F00,
+        0 0 50px #ff6a00,
+        0 0 90px #ff4500;
+    }
 }
 
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 80px;
-  text-align: center;
-  flex-wrap: wrap;
+.icon{
+    background-color: none;
 }
 
-.stat h2 {
-  color: #DC5F00;
-  font-size: 48px;
+.allmain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    padding: 0px 20px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    background: none;
 }
 
-.cta {
-  text-align: center;
+.maintxt{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: 850px;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 20px;
+    margin-top: 0px;
+    background: none;
+    gap: 20px;
 }
 
-.cta p {
-  color: #9ca3af;
-  margin: 20px 0;
+.maintxt h1{
+    width:100%;
+    max-width: 850px;
+    font-size: 46px;
+    text-align: center;
+    overflow-wrap: break-word;
+    line-height: 45px;
+    word-wrap: break-word;
+    background: none;
+    color: white;
+    margin-bottom: 0px;
+    font-weight: 500;
 }
 
-.footer {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 40px;
+.maintxt p{
+    color:#9ca3af;
+    width:100%;
+    max-width: 550px;
+    font-size: 12px;
+    background: none;
+    margin-top: 0px;
 }
 
-.footer p {
-  color: #9ca3af;
+.dash{
+    width: 950px;
+    border: 8px solid #dc5f0069;
+    border-radius: 24px;
+    box-shadow:
+        0 0 40px rgba(220, 95, 0, 0.4),
+        inset 0 0 40px rgba(220, 95, 0, 0.1);
+}
+
+@media (max-width: 480px){
+    .maintxt h1{
+        font-size: 28px;
+        padding: 0px 40px;
+        width: 100%;
+        max-width: 460px;
+    }
+
+    .maintxt{
+        margin: 0px 40px;
+    }
 }
